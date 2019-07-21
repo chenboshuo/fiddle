@@ -4,6 +4,9 @@
 1.  [Coding software](#1-coding-software)
     -   [Jupyter Notebook](#11-Jupyter-Notebook)
     -   [Visual Studio](#12-Visual-Studio)
+2.  [chrome](#-2-chrome)
+    -   [Tampermonkey](#21-Tampermonkey)
+
 # 1 coding software
 敲代码用的软件
 ## 1.1 Jupyter Notebook
@@ -13,5 +16,8 @@
 
 ## 1.2 Visual Studio
 -   [删除右键菜单“在Visual Studio中打开”](https://jingyan.baidu.com/article/60ccbceb4e3f0e64cab19737.html)
+# 2 chrome
+## 2.1 Tampermonkey
+-   [searchEngineJump 搜索引擎快捷跳转](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC)
 # 许可
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
