@@ -11,6 +11,10 @@
 3.  [Database](#3database)
     -   [SQL Server](#31-sql-server)
 
+4.  [Office software](#4-office-software)
+    -   [OneDreive](#41-onedreive)
+
+
 # 1 coding software
 敲代码用的软件
 ## 1.1 Jupyter Notebook
@@ -33,5 +37,9 @@
 -   [安装 2017](https://zijian1998.github.io/2018/03/14/Microsoft%20SQL%20Server%202017%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/)
     -   [jre7.0(兰奏云备用链接)](https://www.lanzous.com/i53bomf)
     -   [jre7.0(github备用)](./flies/jre-7u80-windows-x64.exe)
+
+# 4 Office software
+## 4.1 OneDreive
+-   [onedrive实现同步任意一个文件夹](https://www.jb51.net/os/win10/489838_all.html)
 # 许可
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
