@@ -38,6 +38,7 @@
 -   [安装 2017](https://zijian1998.github.io/2018/03/14/Microsoft%20SQL%20Server%202017%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/)
     -   [jre7.0(兰奏云备用链接)](https://www.lanzous.com/i53bomf)
     -   [jre7.0(github备用)](./flies/jre-7u80-windows-x64.exe)
+-   [用 Management Studio 链接](https://blog.csdn.net/qq_41903105/article/details/83994822)
 
 # 4 Office software
 ## 4.1 OneDreive
