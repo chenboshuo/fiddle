@@ -14,7 +14,9 @@
 4.  [Office software](#4-office-software)
     -   [OneDreive](#41-onedreive)
 
-
+5.  [Reading](#5-Reading)
+    -   [kindle](#51-kindle)
+-   [LINCENSE](#LICENSE)
 # 1 coding software
 敲代码用的软件
 ## 1.1 Jupyter Notebook
@@ -43,5 +45,9 @@
 # 4 Office software
 ## 4.1 OneDreive
 -   [onedrive实现同步任意一个文件夹](https://www.jb51.net/os/win10/489838_all.html)
-# 许可
+
+# 5 Reading
+## 5.1 kindle
+-   [向Kindle推送新闻杂志资源！](https://zhuanlan.zhihu.com/p/51847169)
+# LICENSE
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
