@@ -29,7 +29,7 @@
 
 ## 1.3 Visual Studio Code
 -   [TabNine 自动补全代码](https://tabnine.com/)
-
+-   [一键搞定VSCode的Java开发环境](https://zhuanlan.zhihu.com/p/69594176)
 # 2 chrome
 ## 2.1 Tampermonkey
 -   [searchEngineJump 搜索引擎快捷跳转](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC)
