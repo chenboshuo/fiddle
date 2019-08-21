@@ -5,6 +5,7 @@
     -   [Jupyter Notebook](#11-Jupyter-Notebook)
     -   [Visual Studio](#12-Visual-Studio)
     -   [Visual Studio Code](#-13-Visual-Studio-Code)
+    -   [PyCharm](#-14-PyCharm)
 2.  [chrome](#-2-chrome)
     -   [Tampermonkey](#21-Tampermonkey)
 
@@ -31,6 +32,8 @@
 -   [TabNine 自动补全代码](https://tabnine.com/)
 -   [一键搞定VSCode的Java开发环境](https://zhuanlan.zhihu.com/p/69594176)
 -   [vscode 插件同步](https://www.jianshu.com/p/a08219737291)
+## 1.4 PyCharm
+-   [Pycharm自动生成文件头注释](https://blog.csdn.net/github_36669230/article/details/78135348)
 # 2 chrome
 ## 2.1 Tampermonkey
 -   [searchEngineJump 搜索引擎快捷跳转](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC)
