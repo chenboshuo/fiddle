@@ -45,6 +45,11 @@
     -   [jre7.0(兰奏云备用链接)](https://www.lanzous.com/i53bomf)
     -   [jre7.0(github备用)](./flies/jre-7u80-windows-x64.exe)
 -   [用 Management Studio 链接](https://blog.csdn.net/qq_41903105/article/details/83994822)
+    -   [可以用命令行快速启动服务](https://www.cnblogs.com/Sabre/archive/2011/04/13/2014489.html)
+        -   在之后启动服务,可以直接使用以下命令
+        ```cmd
+        net start MSSQLSERVER
+        ```
 
 # 4 Office software
 ## 4.1 OneDreive
