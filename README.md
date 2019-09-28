@@ -33,6 +33,7 @@
 -   [TabNine 自动补全代码](https://tabnine.com/)
 -   [一键搞定VSCode的Java开发环境](https://zhuanlan.zhihu.com/p/69594176)
 -   [vscode 插件同步](https://www.jianshu.com/p/a08219737291)
+-   [VsCode 操作MS SQL Server](https://zhuanlan.zhihu.com/p/23912152)
 ## 1.4 PyCharm
 -   [Pycharm自动生成文件头注释](https://blog.csdn.net/github_36669230/article/details/78135348)
 
