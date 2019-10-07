@@ -2,7 +2,7 @@
 各种折腾电脑的记录
 ## Table of Contents  目录 :clipboard:
 1.  [Coding software](#1-coding-software)
-    -   [Jupyter Notebook](#11-Jupyter-Notebook)
+    -   [Jupyter](#11-Jupyter)
     -   [Visual Studio](#12-Visual-Studio)
     -   [Visual Studio Code](#-13-Visual-Studio-Code)
     -   [PyCharm](#-14-PyCharm)
@@ -21,10 +21,12 @@
 -   [LINCENSE](#LICENSE)
 # 1 coding software
 敲代码用的软件
-## 1.1 Jupyter Notebook
+## 1.1 Jupyter
 
 -   [解决图片不清晰的问题](https://www.jianshu.com/p/f1229234bcf4)
 -   [解决中文乱码问题](https://blog.csdn.net/zzsg2005/article/details/78065075)
+-   [利器|JupyterLab 数据分析必备IDE完全指南](https://zhuanlan.zhihu.com/p/67959768)
+-   [Jupyter lab 的多种内核](https://github.com/jupyterlab/jupyterlab-toc)
 
 ## 1.2 Visual Studio
 -   [删除右键菜单“在Visual Studio中打开”](https://jingyan.baidu.com/article/60ccbceb4e3f0e64cab19737.html)
