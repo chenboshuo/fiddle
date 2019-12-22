@@ -19,6 +19,8 @@
 5.  [Reading](#5-Reading)
     -   [kindle](#51-kindle)
 -   [LINCENSE](#LICENSE)
+6.  [GitHub](#6-Github)
+
 # 1 coding software
 敲代码用的软件
 ## 1.1 Jupyter
@@ -27,6 +29,7 @@
 -   [解决中文乱码问题](https://blog.csdn.net/zzsg2005/article/details/78065075)
 -   [利器|JupyterLab 数据分析必备IDE完全指南](https://zhuanlan.zhihu.com/p/67959768)
 -   [Jupyter lab 的多种内核](https://github.com/jupyterlab/jupyterlab-toc)
+-   [双击打开ipynb文件](https://www.toutiao.com/a6771702157893698060/)
 
 ## 1.2 Visual Studio
 -   [删除右键菜单“在Visual Studio中打开”](https://jingyan.baidu.com/article/60ccbceb4e3f0e64cab19737.html)
@@ -65,5 +68,8 @@
 # 5 Reading
 ## 5.1 kindle
 -   [向Kindle推送新闻杂志资源！](https://zhuanlan.zhihu.com/p/51847169)
+
+# 6 GitHub
+-   [利用Github+Jeklly搭建个人博客网站](https://mp.weixin.qq.com/s/zIegzXW8-v8bnvnyVjfzEg)
 # LICENSE
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
