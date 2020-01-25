@@ -4,10 +4,10 @@
 1.  [Coding software](#1-coding-software)
     -   [Jupyter](#11-Jupyter)
     -   [Visual Studio](#12-Visual-Studio)
-    -   [Visual Studio Code](#-13-Visual-Studio-Code)
-    -   [PyCharm](#-14-PyCharm)
-    -   [atom](#-15-atom )
-2.  [chrome](#-2-chrome)
+    -   [Visual Studio Code](#13-Visual-Studio-Code)
+    -   [PyCharm](#14-PyCharm)
+    -   [atom](#15-atom )
+2.  [chrome](#2-chrome)
     -   [Tampermonkey](#21-Tampermonkey)
 
 3.  [Database](#3database)
@@ -18,8 +18,9 @@
 
 5.  [Reading](#5-Reading)
     -   [kindle](#51-kindle)
--   [LINCENSE](#LICENSE)
 6.  [GitHub](#6-Github)
+
+-   [LINCENSE](#LICENSE)
 
 # 1 coding software
 敲代码用的软件
@@ -67,9 +68,11 @@
 
 # 5 Reading
 ## 5.1 kindle
--   [向Kindle推送新闻杂志资源！](https://zhuanlan.zhihu.com/p/51847169)
+-   [KindleEar 搭建教程：推送 RSS 订阅到 Kindle](https://bookfere.com/post/19.html)
+-   [给 KindleEar 绑定可直接访问它的免费顶级域名](https://bookfere.com/post/732.html)
 
 # 6 GitHub
 -   [利用Github+Jeklly搭建个人博客网站](https://mp.weixin.qq.com/s/zIegzXW8-v8bnvnyVjfzEg)
+
 # LICENSE
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
