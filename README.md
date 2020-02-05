@@ -21,6 +21,9 @@
 6.  [GitHub](#6-Github)
 
 7.  [Linux](#7-Linux )
+    -   [zsh](#71-zsh)
+    -   [wine](#-72-wine)
+
 
 -   [LINCENSE](#LICENSE)
 
@@ -77,7 +80,17 @@
 -   [利用Github+Jeklly搭建个人博客网站](https://mp.weixin.qq.com/s/zIegzXW8-v8bnvnyVjfzEg)
 
 # 7 Linux
--  [Linux 下hosts文件详解](https://www.cnblogs.com/xiaoit/p/3989026.html)
+-   [Linux 下hosts文件详解](https://www.cnblogs.com/xiaoit/p/3989026.html)
+-   [在Linux中永久设置Anaconda环境变量的方法](https://www.linuxidc.com/Linux/2016-08/134259.htm)
+-   [系统备份](https://zhuanlan.zhihu.com/p/51827233)
+-   [挂载入win系统盘(英文)](https://unix.stackexchange.com/questions/131917/how-to-mount-the-d-disk-of-windows-in-linux-mint)
+
+## 7.1 zsh
+-   [日常折腾 - zsh - 一个更好用的终端](https://www.jianshu.com/p/27c8088dc8f7)
+-   [为什么说 zsh 是 shell 中的极品?](https://www.zhihu.com/question/21418449)
+
+## 7.2 wine
+-   [Linux下通过Wine安装微信](https://zhuanlan.zhihu.com/p/76331687)
 
 # LICENSE
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
