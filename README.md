@@ -7,6 +7,7 @@
     -   [Visual Studio Code](#13-Visual-Studio-Code)
     -   [PyCharm](#14-PyCharm)
     -   [atom](#15-atom )
+    -   [vim](#16-vim)
 2.  [chrome](#2-chrome)
     -   [Tampermonkey](#21-Tampermonkey)
 
@@ -23,6 +24,7 @@
 7.  [Linux](#7-Linux )
     -   [zsh](#71-zsh)
     -   [wine](#-72-wine)
+
 
 
 -   [LINCENSE](#LICENSE)
@@ -50,6 +52,10 @@
 
 ## 1.5 atom
 -   [使用sync-settings同步ATOM插件和配置](https://www.jianshu.com/p/858a14eb9e91)
+
+## 1.6 vim
+-   [How I'm able to take notes in mathematics lectures using LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)
+
 # 2 chrome
 ## 2.1 Tampermonkey
 -   [searchEngineJump 搜索引擎快捷跳转](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC)
@@ -91,6 +97,7 @@
 
 ## 7.2 wine
 -   [Linux下通过Wine安装微信](https://zhuanlan.zhihu.com/p/76331687)
+
 
 # LICENSE
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
