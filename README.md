@@ -24,6 +24,7 @@
 7.  [Linux](#7-Linux )
     -   [zsh](#71-zsh)
     -   [wine](#-72-wine)
+    -   [shell](#-73-shell)
 
 
 
@@ -97,6 +98,9 @@
 
 ## 7.2 wine
 -   [Linux下通过Wine安装微信](https://zhuanlan.zhihu.com/p/76331687)
+
+## 7.3 Shell
+-   [Linux系统（ubuntu）一键OCR识别图片截图文字转文本](https://zhuanlan.zhihu.com/p/114917496)
 
 
 # LICENSE
