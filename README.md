@@ -85,6 +85,7 @@
 
 # 6 GitHub
 -   [利用Github+Jeklly搭建个人博客网站](https://mp.weixin.qq.com/s/zIegzXW8-v8bnvnyVjfzEg)
+-   [waka-readme(在个人README)加入wakatime](https://github.com/athul/waka-readme)
 
 # 7 Linux
 -   [Linux 下hosts文件详解](https://www.cnblogs.com/xiaoit/p/3989026.html)
