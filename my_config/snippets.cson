@@ -1,0 +1,162 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.source.coffee':
+  'Console log':
+    'prefix': 'hello'
+    'body': 'console.error(${1:"crash"});$2'
+
+# the snippets for C
+'.source.c':
+  '#define':
+    'prefix': 'de'
+    'body': '#define $1 $2'
+
+  'break':
+    'prefix': 'b'
+    'body': 'break;\n'
+
+  'for loop':
+    'prefix':'for'
+    'body':'for(${1:int} ${2:i} = ${3:0}; ${2:i} < ${4:len}; ++${2:i}){$5\n\t$6\n}$7'
+  'include <>':
+    'prefix':'Inc'
+    'body':'#include <$1.h>$2'
+  'printf':
+    'prefix':'printf'
+    'body': 'printf("$1\\\\n"$2);$3'
+# the snippets for C++
+# ################################
+# this part is the same as above
+'.source.cpp':
+  '#define':
+    'prefix': 'de'
+    'body': '#define $1 $2'
+  'break':
+    'prefix': 'b'
+    'body': 'break;\n'
+##################################
+  'for loop':
+    'prefix':'for'
+    'body':'for(${1:size_t} ${2:i} = ${3:0}; ${2:i} < ${4:len}; ++${2:i}){$5\n\t$6\n}$7'
+  'iostream std::':
+    'prefix': 'io'
+    'body': '#include <iostream>\n\nusing namespace std;'
+
+  'pythonic for':
+    'prefix': 'forin'
+    'body':'for(${1:int} ${2:i}: ${2:i}s){\n\t$3\n}'
+
+  'cout':
+    'prefix':'cout'
+    'body':'cout << "${1:/* message */}" $2<< endl;$3'
+
+  'print endl':
+    'prefix':'endl'
+    'body':'cout << endl;$1'
+
+  '#include""':
+    'prefix': 'inc'
+    'body': '#include "$1.h"$2'
+  'vector':
+    'prefix': 'vector'
+    'body': 'vector<${1:int}> $2 ${3:;}'
+  'try-catch':
+    'prefix':'try-catch'
+    'body':'try{\n\t$1\n}catch($2){\n\t$3\n}$4'
+  'Class':
+    'prefix':'cl'
+    'body':'class ${1:name_t} $2{\n public:\n\t${1:name_t} (${4:/*arguments*/});\n\t~${1:name_t} ();\n\n private:\n\t${3:/* data */}\n};$5'
+  'template':
+    'prefix': 'template'
+    'body':'template <typename ${1:T}>'
+# the snippets for LaTeX
+'.text.tex.latex':
+  'figure':
+    'prefix':'figure'
+    'body':'${6:% \\\\cref{fig:$1\\}}$7\n\\\\begin{figure}[${5:H}]\n\t\\\\centering\n\t\\\\includegraphics[width = ${4:0.6}\\\\textwidth]{$1}\n\t\\\\caption{$2}\n\t\\\\label{fig:$1}\n\\\\end{figure}$8'
+  'tabular':
+    'prefix':'tabular'
+    'body':'% \\\\cref{t:$2\\}$10\n\\\\begin{table}[H]\n\t\\\\caption{$1}\n\t\\\\label{t:$2}\n\t\\\\centering\n\t\\\\begin{tabular}{${3:ccc}}\n\t\\\\toprule[1.5pt]\n\t\t\\\\makebox[${4:0.1}\\\\textwidth]{$5}$6\\\\\\\\\n\t\t\\\\midrule[1pt]\n\t\t$7\n\t\t${8:% \\\\specialrule{0em}{8pt}{1pt}}\n\t\\\\bottomrule[1.5pt]\n\t\\\\end{tabular}\n\\\\end{table}$11'
+  'makebox':
+    'prefix':'makebox'
+    'body': '\\\\makebox[$1\\\\textwidth]{$2} ${3:&} $0'
+  'equation':
+    'prefix':'equation'
+    'body':'\\\\begin{equation}\n\t$2\n\t\\\\label{eq:$1}\n\\\\end{equation}$0'
+  'assumption':
+    'prefix':'assumption'
+    'body':'\\\\begin{assumption}\\\\label{asu:$1}\n\t$2\n\\\\end{assumption}$0'
+  '符号约定':
+    'prefix':'fuhao'
+    'body':'\$$1\$ & $2 \\\\\\\\ $0'
+  'frac':
+    'prefix':'frac'
+    'body':'\\\\dfrac{$1}{$2}$0'
+  'insert code':
+    'prefix' : 'code'
+    'body': '\\\\begin{lstlisting}[language=$1]
+    \n\t$2\n\\\\end{lstlisting}'
+  'frame':
+    'prefix':'frame'
+    'body':'\\\\begin{frame}$1\n\t$2\n\\\\end{frame}'
+  'column':
+    'prefix':'column'
+    'body':'\\\\begin{columns}[c]\n\t\\\\column{${1:0.6}\\\\textwidth}\n\t\t$4\n\t\\\\column{${2:0.3}\\\\textwidth}\n\t\t$3\n\\\\end{columns}$0'
+  'definition':
+    'prefix': 'definition'
+    'body': '\\\\begin{definition}$1\n\t$2\n\\\\end{definition}'
+  ## tikz
+  'draw':
+    'prefix':'draw'
+    'body':'\\\\draw ${1:[$2]}(${3:0},${4:0}) ${7:--} (${5:0},${6:0})$8;$0'
+  'circle(tikz)':
+    'prefix':'circle'
+    'body': '(${1:0},${2:0}) circle [radius=${3:2}pt]$0'
+  'arc':
+    'prefix':'arc'
+    'body':'\\\\draw (${1:0}mm, ${2:0}mm) arc [start angle=${3:0}, end angle=${4:0}, radius=${5:0}mm]$0;'
+  'clip':
+    'prefix':'clip'
+    'body':'\\\\clip (${1:0}, ${2:0}) rectangle (${3:0},${4:0});'
+  'node':
+    'prefix':'node'
+    'body': '\\\\node[${1:block}]($2){$3};$4'
+  'below of':
+    'prefix':'below of'
+    'body':'below of='
+  'node distance':
+    'prefix':'node distance'
+    'body':'node distance=${1:3cm}$0'
+  'path':
+    'prefix':'path'
+    'body':'\\\\path[${1:line}] ($2) ${4:--} ($3);$0'
+  'inport from inkscape':
+    'prefix': 'inkspace'
+    'body':'${6:\\\\cref{fig:$1\\}}$7\n\\\\begin{figure}[${5:H}]\n\t\\\\centering\n\t\\\\def\\\\svgwidth{${3:0.6}\\\\\linewidth}\n\t\\\\input{figures/$1.pdf_tex}\n\t\\\\caption{$2}\n\t\\\\label{fig:$1}\n\\\\end{figure}$0'
+######################
+# sql
+######################
+'.source.sql':
+  'insert':
+    'prefix': 'insert into'
+    'body':'insert into ${1:table}\n\tvalues ($2);$0'
