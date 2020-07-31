@@ -1,0 +1,206 @@
+{
+	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log("$1");",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"figure": {
+		"prefix": "figure",
+		"body": [
+			"% \\\\cref{fig:$1\\}$7",
+			"\\\\begin{figure}[${5:H}]",
+			"\t\\\\centering",
+			"\t\\\\includegraphics[width = ${4:0.6}\\\\textwidth]{$1}",
+			"\t\\\\caption{$2}",
+			"\t\\\\label{fig:$1}",
+			"\\\\end{figure}$8"
+		]
+	},
+	"tabular": {
+		"prefix": "tabular",
+		"body": [
+			"% $9\\\\cref{t:$2\\}",
+			"\\\\begin{table}[H]",
+			"\t\\\\caption{$1}",
+			"\t\\\\label{t:$2}",
+			"\t\\\\centering",
+			"\t\\\\begin{tabular}{${3:ccc}}",
+			"\t\\\\toprule[1.5pt]",
+			"\t\t\\\\makebox[${4:0.1}\\\\textwidth]{$5}$6\\\\\\\\",
+			"\t\t\\\\midrule[1pt]",
+			"\t\t$7",
+			"\t\t$8% \\\\specialrule{0em}{8pt}{1pt}",
+			"\t\\\\bottomrule[1.5pt]",
+			"\t\\\\end{tabular}",
+			"\\\\end{table}$11"
+		]
+	},
+	"makebox": {
+		"prefix": "makebox",
+		"body": "\\\\makebox[$1\\\\textwidth]{$2} ${3:&} $0"
+	},
+	"equation": {
+		"prefix": "equation",
+		"body": [
+			"\\\\begin{equation}",
+			"\t$2",
+			"\t% \\\\label{eq:$1}",
+			"\\\\end{equation}$0"
+		]
+	},
+	"assumption": {
+		"prefix": "assumption",
+		"body": [
+			"\\\\begin{assumption}\\\\label{asu:$1}",
+			"\t$2",
+			"\\\\end{assumption}$0"
+		]
+	},
+	"符号约定": {
+		"prefix": "fuhao",
+		"body": "\\$ $1 \\$ & $2 \\\\\\\\ $0"
+	},
+	"inport from inkscape": {
+		"prefix": "inkspace",
+		"body": [
+			"${6:\\\\cref{fig:$1\\}}$7",
+			"\\\\begin{figure}[${5:H}]",
+			"\t\\\\centering",
+			"\t\\\\def\\\\svgwidth{${3:0.6}\\\\linewidth}",
+			"\t\\\\input{figures/$1.pdf_tex}",
+			"\t\\\\caption{$2}",
+			"\t\\\\label{fig:$1}",
+			"\\\\end{figure}$0"
+		]
+	},
+	"begin": {
+		"prefix": "\\begin",
+		"body": [
+			"\\begin{$1}$2",
+			"\t$3",
+			"\\end{$1}$0"
+		]
+	},
+	"$\\\\SI{}{}$": {
+		"prefix": "$\\\\SI",
+		"body": "$\\SI{$1}{$2}$$0"
+	},
+	"\\\\SI{}{}": {
+		"prefix": "\\SI",
+		"body": "\\\\SI{$1}{$2}$0"
+	},
+	"frame": {
+		"prefix": "frame",
+		"body": [
+			"\\\\begin{frame}$1",
+			"\t$0",
+			"\\\\end{frame}"
+		]
+	},
+	"columns": {
+		"prefix": "columns",
+		"body": [
+			"\\\\begin{columns}[c]",
+			"\t\\\\column{${1:.6}\\\\textwidth}",
+			"\t\t$4",
+			"\t\\\\column{${2:.4}\\\\textwidth}",
+			"\t\t$3",
+			"\t\\\\end{columns}$0"
+		]
+	},
+	"enumate": {
+		"prefix": "enumate",
+		"body": [
+			"\\\\begin{enumerate}",
+			"\t\\\\item$1 $2",
+			"\\\\end{enumerate}"
+		]
+	},
+	"algorithm": {
+		"prefix": "alg",
+		"body":[
+		"\\\\begin{algorithm}[H]",
+    "\t\\\\caption{$3}",
+    "\t\\\\begin{codebox}",
+		"\t\t\\\\Procname{$1$2}",
+		"\t\t\t$4",
+    "\t\t\t\\\\li \\\\Return $5",
+    "\t\\\\end{codebox}",
+    "\t\\\\label{alg:$1}",
+		"\\\\end{algorithm}"
+		]
+	},
+	"alg-for":{
+		"prefix": "\\For",
+		"body":[
+			"\\\\For $1:",
+      "\\\\Then",
+			"\t\\\\li $2",
+      "\\\\End"
+		]
+	},
+	"alg-if-else": {
+		"prefix": "\\IFe",
+		"body": [
+			"\\\\If $1:",
+			"\\\\Then",
+			"\t\\\\li $2",
+			"\\\\li \\\\Else $3",
+      "\t\\\\li $4",
+			"\\\\End"
+		]
+	},
+	"alg-if": {
+		"prefix": "\\IF",
+		"body": [
+			"\\\\If $1:",
+			"\\\\Then",
+			"\t\\\\li $2",
+			"\\\\End"
+		]
+	},
+	//
+	// tikz 的 snippets
+	//
+	"draw": {
+		"prefix": "draw",
+		"body": "\\\\draw ${1:[$2]}(${3:0},${4:0}) ${7:--} (${5:0},${6:0})$8;$0"
+	},
+	"circle(tikz)": {
+		"prefix": "circle",
+		"body": "(${1:0},${2:0}) circle [radius=${3:2}pt]$0"
+	},
+	"arc": {
+		"prefix": "arc",
+		"body": "\\\\draw (${1:0}mm, ${2:0}mm) arc [start angle=${3:0}, end angle=${4:0}, radius=${5:0}mm]$0;"
+	},
+	"clip": {
+		"prefix": "clip",
+		"body": "\\\\clip (${1:0}, ${2:0}) rectangle (${3:0},${4:0});"
+	},
+	"node": {
+		"prefix": "node",
+		"body": "\\\\node[${1:block}]($2){$3};$4"
+	},
+	"below of": {
+		"prefix": "below of",
+		"body": "below of="
+	},
+	"node distance": {
+		"prefix": "node distance",
+		"body": "node distance=${1:3cm}$0"
+	},
+	"path": {
+		"prefix": "path",
+		"body": "\\\\path[${1:line}] ($2) ${4:--} ($3);$0"
+	}
+
+}
