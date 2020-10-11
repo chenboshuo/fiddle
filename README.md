@@ -92,6 +92,7 @@
 -   [在Linux中永久设置Anaconda环境变量的方法](https://www.linuxidc.com/Linux/2016-08/134259.htm)
 -   [系统备份](https://zhuanlan.zhihu.com/p/51827233)
 -   [挂载入win系统盘(英文)](https://unix.stackexchange.com/questions/131917/how-to-mount-the-d-disk-of-windows-in-linux-mint)
+-   [A modern desktop interface for Linux - packaged as an extension for GNOME Shell.](https://material-shell.com/)
 
 ## 7.1 zsh
 -   [日常折腾 - zsh - 一个更好用的终端](https://www.jianshu.com/p/27c8088dc8f7)
