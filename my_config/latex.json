@@ -68,6 +68,25 @@
 		"prefix": "fuhao",
 		"body": "\\$ $1 \\$ & $2 \\\\\\\\ $0"
 	},
+	"newsymbol":{
+		"prefix": "glsnewsymbol",
+		"body": [
+			"\\\\glsxtrnewsymbol[",
+				"\tdescription={%",
+					"\t\t$1",
+				"\t},",
+				"\tunit={\\\\si{$3}}",
+			"]{$4}{\\\\ensuremath{$5}}$0"
+		]
+	},
+	"glossary description":{
+		"prefix": "\\glsdesc",
+		"body": "\\\\glsdesc{$1} $0"
+	},
+	"glossary item":{
+		"prefix": "glsitem",
+		"body": "\\\\glsdesc{$1} \\\\gls{$1} $0"
+	},
 	"inport from inkscape": {
 		"prefix": "inkspace",
 		"body": [
@@ -127,15 +146,16 @@
 	"algorithm": {
 		"prefix": "alg",
 		"body":[
-		"\\\\begin{algorithm}[H]",
-    "\t\\\\caption{$3}",
-    "\t\\\\begin{codebox}",
-		"\t\t\\\\Procname{$1$2}",
-		"\t\t\t$4",
-    "\t\t\t\\\\li \\\\Return $5",
-    "\t\\\\end{codebox}",
-    "\t\\\\label{alg:$1}",
-		"\\\\end{algorithm}"
+			"% \\\\cref{alg:$1}",
+			"\\\\begin{algorithm}[H]",
+			"\t\\\\caption{$3}",
+			"\t\\\\begin{codebox}",
+			"\t\t\\\\Procname{$1$2}",
+			"\t\t\t$4",
+			"\t\t\t\\\\li \\\\Return $5", 
+			"\t\\\\end{codebox}",    
+			"\t\\\\label{alg:$1}",
+			"\\\\end{algorithm}"
 		]
 	},
 	"alg-for":{
@@ -167,7 +187,35 @@
 			"\\\\End"
 		]
 	},
-	//
+	"problem environment":{
+		"prefix": "problem",
+		"body": [
+			"\\\\begin{problem}",
+			"\t$1",
+			"\\\\end{problem}"
+		]
+	},
+	"solution environment": {
+		"prefix": "solution",
+		"body": [
+			"\\\\begin{solution}",
+			"\t$1",
+			"\\\\end{solution}"
+		]
+	},
+	"lstlisting environment": {
+		"prefix": "lstlisting",
+		"body": [
+			"\\\\begin{lstlisting}${1:[language=$2]}",
+			"\t$3",
+			"\\\\end{lstlisting}"
+		]
+	},
+	"degreeCelsius":{
+		"prefix": "\\degreeCelsius",
+		"body": "\\\\degreeCelsius"
+	},
+	// 
 	// tikz 的 snippets
 	//
 	"draw": {
