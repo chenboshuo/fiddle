@@ -1,0 +1,174 @@
+{
+	"autoDocstring.docstringFormat": "sphinx",
+	"workbench.colorTheme": "Atom One Light",
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"atomKeymap.promptV3Features": true,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"latex-workshop.latex.tools": [
+		{
+			"name": "xelatex",
+			"command": "xelatex",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOCFILE%"
+			]
+		},
+		{
+			"name": "pdflatex",
+			"command": "pdflatex",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOCFILE%"
+			]
+		},
+		{
+			"name": "bibtex",
+			"command": "bibtex",
+			"args": [
+				"%DOCFILE%"
+			]
+		}
+	],
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "xelatex",
+			"tools": [
+				"xelatex"
+			],
+		},
+		{
+			"name": "pdflatex",
+			"tools": [
+				"pdflatex"
+			]
+		},
+		{
+			"name": "xe->bib->xe->xe",
+			"tools": [
+				"xelatex",
+				"bibtex",
+				"xelatex",
+				"xelatex"
+			]
+		},
+		{
+			"name": "pdf->bib->pdf->pdf",
+			"tools": [
+				"pdflatex",
+				"bibtex",
+				"pdflatex",
+				"pdflatex"
+			]
+		},
+	],
+	"code-runner.executorMap": {
+		"javascript": "node",
+		// "php": "C:\\php\\php.exe",
+		"python": "cd $dir && python $fileName",
+		"perl": "perl",
+		// "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
+		"go": "go run",
+		// "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
+		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+		// "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.out -lm && time $dir$fileNameWithoutExt.out",
+		"c": "cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt.out -lm && time /tmp/$fileNameWithoutExt.out",
+		// "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.out && time ./$fileNameWithoutExt.out"
+		"cpp": "cd $dir && g++ $fileName -o /tmp/$fileNameWithoutExt.out && time /tmp/$fileNameWithoutExt.out",
+	},
+	"code-runner.saveFileBeforeRun": true,
+	"window.zoomLevel": 0,
+	"latex-workshop.message.error.show": false,
+	"latex-workshop.message.warning.show": false,
+	"code-runner.runInTerminal": true,
+	"editor.tabSize": 2,
+	"[latex]": {
+		"editor.defaultFormatter": "James-Yu.latex-workshop"
+	},
+	"clang-format.fallbackStyle": "Google",
+	"C_Cpp.clang_format_fallbackStyle": "Google",
+	"latex-workshop.view.pdf.viewer": "tab",
+	"cSpell.userWords": [
+		"Helvetica",
+		"aliyun",
+		"astype",
+		"ctex",
+		"deque",
+		"fontset",
+		"heapq",
+		"iterrows",
+		"itertools",
+		"ivar",
+		"networkx",
+		"numpy",
+		"nums",
+		"pyplot",
+		"quantile",
+		"rtype",
+		"scipy",
+		"sympy",
+		"tikzplotlib"
+	],
+	"editor.fontSize": 22,
+	"terminal.integrated.fontSize": 18,
+	"editor.mouseWheelZoom": true,
+	// Set the font
+	"editor.fontFamily": "JetBrains Mono",
+	// Turn on font ligatures
+	"editor.fontLigatures": true,
+	"python.showStartPage": false, // Override default value of false
+	"[python]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4
+	},
+	"[masm]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4
+	},
+	"files.exclude": {
+		"**/__pycache__/*": true,
+		"**/.virtual_documents/*": true,
+		"**/*.aux": true,
+		"**/*.out": true,
+		"**/*.synctex.gz": true,
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"zenMode.fullScreen": false,
+	"window.menuBarVisibility": "toggle",
+	"workbench.sideBar.location": "left",
+	"workbench.activityBar.visible": true,
+	"workbench.statusBar.visible": true,
+	"editor.minimap.enabled": true,
+	"[cpp]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"explorer.confirmDelete": false,
+	"editor.formatOnPaste": true,
+	"[java]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"workbench.editorAssociations": [
+		{
+			"viewType": "ms-python.python.notebook.ipynb",
+			"filenamePattern": "*.ipynb"
+		}
+	],
+	"code-runner.languageIdToFileExtensionMap": {
+		"bat": ".bat",
+		"powershell": ".ps1",
+		"typescript": ".ts",
+    },
+	"editor.defaultFormatter": "vscode.github",
+	"java.format.settings.profile": "Google",
+	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+	"terminal.integrated.inheritEnv": false,
+    "pyright.disableOrganizeImports": true,
+    "jupyter.alwaysTrustNotebooks": true
+}
