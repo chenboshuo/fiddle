@@ -211,6 +211,14 @@
 			"\\\\end{lstlisting}"
 		]
 	},
+	"itemize environment":{
+		"prefix": "itemize environment",
+		"body": [
+			"\\\\begin{itemize}",
+			"\t\\\\item $1",
+			"\\\\end{itemize}$0",
+		]
+	},
 	"degreeCelsius":{
 		"prefix": "\\degreeCelsius",
 		"body": "\\\\degreeCelsius"
