@@ -198,6 +198,12 @@
   '\\lstinputlisting':
     'prefix':'lstinputlisting'
     'body':'\\\\lstinputlisting$1{$2}$0'
+  'newacronym':
+    'prefix':"newacronym"
+    'body':"\\\\newacronym{${1:id}}{${2:short}}{${3:desc}}\n\\\\gls{$1}$0"
+  'acronym-def':
+    'prefix':"acronym-def"
+    'body':"\\\\newacronym{${1:id}}{${2:short}}{${3:desc}}\n\\\\begin{definition}[\\\\gls{$1}]\n\t$4\n\\\\end{definition}$0"
   ## tikz
   'draw':
     'prefix':'draw'
