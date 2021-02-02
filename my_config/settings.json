@@ -5,6 +5,7 @@
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"atomKeymap.promptV3Features": true,
 	"editor.multiCursorModifier": "ctrlCmd",
+	"latex-workshop.latex.outDir":"%DIR%/_build",
 	"latex-workshop.latex.tools": [
 		{
 			"name": "xelatex",
@@ -13,6 +14,7 @@
 				"-synctex=1",
 				"-interaction=nonstopmode",
 				"-file-line-error",
+				"-output-directory=%OUTDIR%",
 				"%DOCFILE%"
 			]
 		},
@@ -32,13 +34,30 @@
 			"args": [
 				"%DOCFILE%"
 			]
-		}
+		},
+		{
+			"name": "biber",
+			"command": "biber",
+			"args": [
+				"%OUTDIR%/%DOCFILE%",
+				// "%DOCFILE%",
+			]
+		},
+		{
+			"name": "makeglossaries",
+			"command": "makeglossaries",
+			"args": [
+				"-d",
+				"%OUTDIR%",
+				"%DOCFILE%"
+			]
+		},
 	],
 	"latex-workshop.latex.recipes": [
 		{
 			"name": "xelatex",
 			"tools": [
-				"xelatex"
+				"xelatex",
 			],
 		},
 		{
@@ -65,6 +84,24 @@
 				"pdflatex"
 			]
 		},
+		{
+			"name":"biber+makeglossaries",
+			"tools": [
+				"xelatex",
+				"biber",
+				"xelatex",
+				"makeglossaries",
+				"xelatex"
+			]
+		},
+	],
+	"latex-workshop.view.pdf.external.synctex.args": [
+		"-forward-search",
+		"%TEX%",
+		"%LINE%",
+		"-reuse-instance",
+		"-inverse-search",
+		"%PDF%",
 	],
 	"code-runner.executorMap": {
 		"javascript": "node",
@@ -75,10 +112,11 @@
 		"go": "go run",
 		// "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
 		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-		// "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.out -lm && time $dir$fileNameWithoutExt.out",
-		"c": "cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt.out -lm && time /tmp/$fileNameWithoutExt.out",
+		"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.out -lm && time $dir$fileNameWithoutExt.out",
+		// "c": "cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt.out -lm && time /tmp/$fileNameWithoutExt.out",
 		// "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.out && time ./$fileNameWithoutExt.out"
-		"cpp": "cd $dir && g++ $fileName -o /tmp/$fileNameWithoutExt.out && time /tmp/$fileNameWithoutExt.out",
+		"cpp": "cd $dir && g++ $fileName -o ./$fileNameWithoutExt.out && time ./$fileNameWithoutExt.out",
+		"latex": "cd $dir && sh make.sh"
 	},
 	"code-runner.saveFileBeforeRun": true,
 	"window.zoomLevel": 0,
@@ -98,12 +136,14 @@
 		"astype",
 		"ctex",
 		"deque",
+		"endp",
 		"fontset",
 		"heapq",
 		"iterrows",
 		"itertools",
 		"ivar",
 		"networkx",
+		"nonterminals",
 		"numpy",
 		"nums",
 		"pyplot",
@@ -165,10 +205,15 @@
 		"powershell": ".ps1",
 		"typescript": ".ts",
     },
-	"editor.defaultFormatter": "vscode.github",
+	"editor.defaultFormatter": "vscode.python",
 	"java.format.settings.profile": "Google",
 	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
 	"terminal.integrated.inheritEnv": false,
     "pyright.disableOrganizeImports": true,
-    "jupyter.alwaysTrustNotebooks": true
+		"jupyter.alwaysTrustNotebooks": true,
+		"cSpell.enableFiletypes": [
+			"masm"
+		],
+		"editor.formatOnSaveMode": "modifications",
+		"latex-workshop.message.information.show": true
 }
