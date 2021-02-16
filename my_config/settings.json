@@ -32,7 +32,8 @@
 			"name": "bibtex",
 			"command": "bibtex",
 			"args": [
-				"%DOCFILE%"
+				"./_build/%DOCFILE%",
+				// "%DOCFILE%"
 			]
 		},
 		{
@@ -112,7 +113,7 @@
 		"go": "go run",
 		// "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
 		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-		"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.out -lm && time $dir$fileNameWithoutExt.out",
+		"c": "cd $dir && gcc $fileName -o ./$fileNameWithoutExt.out -lm && time $dir$fileNameWithoutExt.out",
 		// "c": "cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt.out -lm && time /tmp/$fileNameWithoutExt.out",
 		// "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.out && time ./$fileNameWithoutExt.out"
 		"cpp": "cd $dir && g++ $fileName -o ./$fileNameWithoutExt.out && time ./$fileNameWithoutExt.out",
@@ -183,7 +184,6 @@
 	"zenMode.fullScreen": false,
 	"window.menuBarVisibility": "toggle",
 	"workbench.sideBar.location": "left",
-	"workbench.activityBar.visible": true,
 	"workbench.statusBar.visible": true,
 	"editor.minimap.enabled": true,
 	"[cpp]": {
@@ -215,5 +215,6 @@
 			"masm"
 		],
 		"editor.formatOnSaveMode": "modifications",
-		"latex-workshop.message.information.show": true
+		"latex-workshop.message.information.show": true,
+	
 }
