@@ -106,6 +106,7 @@
 	],
 	"code-runner.executorMap": {
 		"javascript": "node",
+		"matlab": "cd $dir && matlab < $fileName",
 		// "php": "C:\\php\\php.exe",
 		"python": "cd $dir && python $fileName",
 		"perl": "perl",

@@ -333,8 +333,8 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 alias trojan='cd /usr/local/src/trojan-cli/ && ./trojan'
 alias http_proxy='export http_proxy=socks5://127.0.0.1:1080 && export https_proxy=$http_proxy'
 
-# I don't know why it changes theme
-# source $ZSH/oh-my-zsh.sh
+# matlab
+alias matlab='/media/data/Programs/matlab_linux/bin/matlab -nodesktop -nosplash $*'
 
 # This will simply print an empty line before the PROMPT is rendered.
 precmd() { print "" }
