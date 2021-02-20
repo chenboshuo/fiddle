@@ -5,7 +5,7 @@
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"atomKeymap.promptV3Features": true,
 	"editor.multiCursorModifier": "ctrlCmd",
-	"latex-workshop.latex.outDir":"%DIR%/_build",
+	"latex-workshop.latex.outDir":"%DIR%/build",
 	"latex-workshop.latex.tools": [
 		{
 			"name": "xelatex",
@@ -217,5 +217,5 @@
 		],
 		"editor.formatOnSaveMode": "modifications",
 		"latex-workshop.message.information.show": true,
-	
+
 }
