@@ -84,7 +84,7 @@ set showmode
 set showcmd
 
 " 使用鼠标, 关闭为r
-" set mouse=a
+set mouse=a
 
 " 使用utf-8
 set encoding=utf-8
