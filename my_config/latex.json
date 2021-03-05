@@ -87,6 +87,11 @@
 		"prefix": "glsitem",
 		"body": "\\\\glsdesc{$1} \\\\gls{$1} $0"
 	},
+	"newacronym": {
+		"prefix": "newacronym",
+		"body": ["\\newacronym{$1}{$1}{$2}","\\gls{$1}$0"],
+		"description": "newacronym"
+	},
 	"inport from inkscape": {
 		"prefix": "inkspace",
 		"body": [
