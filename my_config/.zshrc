@@ -335,6 +335,7 @@ alias http_proxy='export http_proxy=socks5://127.0.0.1:1080 && export https_prox
 
 # matlab
 alias matlab='/media/data/Programs/matlab_linux/bin/matlab -nodesktop -nosplash $*'
+alias matlab_full='/media/data/Programs/matlab_linux/bin/matlab' 
 
 # This will simply print an empty line before the PROMPT is rendered.
 precmd() { print "" }
