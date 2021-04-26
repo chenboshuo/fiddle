@@ -55,6 +55,7 @@ call vundle#begin()
   " Supertab: use <c-n> subtitude tab
   Plugin 'ervandew/supertab'
 
+  Plugin 'bronson/vim-trailing-whitespace'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -203,3 +204,4 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+imap jj <Esc>
