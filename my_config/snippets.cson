@@ -204,6 +204,9 @@
   'acronym-def':
     'prefix':"acronym-def"
     'body':"\\\\newacronym{${1:id}}{${2:short}}{${3:desc}}\n\\\\begin{definition}[\\\\gls{$1}]\n\t$4\n\\\\end{definition}$0"
+  'bash-code':
+    'prefix':'bash'
+    'body':"\\\\begin{lstlisting}[language=bash]\n\t$1\n\\\\end{lstlisting}$0"
   ## tikz
   'draw':
     'prefix':'draw'
