@@ -1,6 +1,6 @@
 {
 	"autoDocstring.docstringFormat": "sphinx",
-	"workbench.colorTheme": "Atom One Light",
+	"workbench.colorTheme": "GitHub Light",
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"atomKeymap.promptV3Features": true,
@@ -32,7 +32,7 @@
 			"name": "bibtex",
 			"command": "bibtex",
 			"args": [
-				"./_build/%DOCFILE%",
+				"./build/%DOCFILE%",
 				// "%DOCFILE%"
 			]
 		},
@@ -95,6 +95,15 @@
 				"xelatex"
 			]
 		},
+		{
+			"name":"biber",
+			"tools": [
+				"xelatex",
+				"biber",
+				"xelatex",
+				"xelatex",
+			]
+		},
 	],
 	"latex-workshop.view.pdf.external.synctex.args": [
 		"-forward-search",
@@ -108,7 +117,7 @@
 		"javascript": "node",
 		"matlab": "cd $dir && matlab < $fileName",
 		// "php": "C:\\php\\php.exe",
-		"python": "cd $dir && python $fileName",
+		"python": "cd $dir && time python $fileName",
 		"perl": "perl",
 		// "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
 		"go": "go run",
@@ -153,7 +162,8 @@
 		"rtype",
 		"scipy",
 		"sympy",
-		"tikzplotlib"
+		"tikzplotlib",
+		"timeit"
 	],
 	"editor.fontSize": 22,
 	"terminal.integrated.fontSize": 18,
@@ -199,6 +209,10 @@
 		{
 			"viewType": "ms-python.python.notebook.ipynb",
 			"filenamePattern": "*.ipynb"
+		},
+		{
+			"viewType": "jupyter.notebook.ipynb",
+			"filenamePattern": "*.ipynb"
 		}
 	],
 	"code-runner.languageIdToFileExtensionMap": {
@@ -217,5 +231,8 @@
 		],
 		"editor.formatOnSaveMode": "modifications",
 		"latex-workshop.message.information.show": true,
-
+		"python.languageServer": "Microsoft",
+		"python.analysis.extraPaths": [
+			"."
+		],
 }
