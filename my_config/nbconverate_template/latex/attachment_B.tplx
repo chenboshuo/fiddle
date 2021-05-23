@@ -20,6 +20,8 @@
     % Don't number sections
     \renewcommand{\thesection}{\Alph{section}}
     \renewcommand{\thesubsection}{\thesection\thinspace.\thinspace\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{%
+      \thesection\thinspace.\thinspace\arabic{subsection}\thinspace.\thinspace\arabic{subsubsection}}
 
 ((* endblock definitions *))
 
