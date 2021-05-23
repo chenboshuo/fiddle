@@ -262,6 +262,9 @@
 	"path": {
 		"prefix": "path",
 		"body": "\\\\path[${1:line}] ($2) ${4:--} ($3);$0"
-	}
-
+	},
+	"otherkeywords={}":{
+		"prefix": "otherkeywords={}",
+		"body": "otherkeywords={$1}$0"
+	},
 }
