@@ -46,9 +46,9 @@
 \documentclass{article}
 \usepackage{ctex}
 \setcounter{section}{2}
+\pagestyle{empty}
 \renewcommand\thesection{\Alph{section}}
 \renewcommand{\maketitle}{
-  \pagestyle{empty}
   \section*{\quad}
 }
 ((* endblock docclass *))
