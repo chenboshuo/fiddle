@@ -47,7 +47,7 @@ call vundle#begin()
   " YouCompleteMe
   " https://github.com/ycm-core/YouCompleteMe
   Plugin 'Valloric/YouCompleteMe'
-  
+
   " https://github.com/SirVer/ultisnips
   Plugin 'sirver/ultisnips'
   " All of your Plugins must be added before the following line
@@ -56,6 +56,15 @@ call vundle#begin()
   Plugin 'ervandew/supertab'
 
   Plugin 'bronson/vim-trailing-whitespace'
+
+  " https://github.com/davidhalter/jedi-vim
+  Plugin 'davidhalter/jedi-vim'
+
+  " https://github.com/Yggdroot/indentLine
+  Plugin 'Yggdroot/indentLine'
+
+  " https://github.com/preservim/nerdtree
+  Plugin 'preservim/nerdtree'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -205,3 +214,27 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 imap jj <Esc>
+
+" the setting of NERDTree
+" https://github.com/preservim/nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-\> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" implement system copy 
+" cnblogs.com/huahuayu/p/12235242.html1234
+" zhihu.com/question/19863631
+" if you run vim --version | grep clipboard
+" is -clipboard,you need get get the extra features
+" run 
+" sudo apt install vim-gtk 
+set clipboard^=unnamed,unnamedplus
+
+" correct some spelling 修改错误拼写
+iabbrev 收敛半径 收敛半径
+
+
