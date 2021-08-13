@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH="/home/cbs/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
+# ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -331,7 +338,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # proxy
 alias trojan='cd /usr/local/src/trojan-cli/ && ./trojan'
-alias http_proxy='export http_proxy=socks5://127.0.0.1:1080 && export https_proxy=$http_proxy'
+alias http_proxy='export http_proxy=socks5://127.0.0.1:1089 && export https_proxy=$http_proxy'
 
 # matlab
 alias matlab='/media/data/Programs/matlab_linux/bin/matlab -nodesktop -nosplash $*'
@@ -342,3 +349,22 @@ precmd() { print "" }
 
 # open tmp
 cd /tmp
+
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# use trash(http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html)
+alias rm="trash-rm"
+
+# https://github.com/sharkdp/bat
+# alias cat="bat"
+export BAT_THEME="GitHub"
+
+# https://github.com/muesli/duf
+# alias df="duf"
+
+# https://github.com/dalance/procs
+# alias ps="procs"
