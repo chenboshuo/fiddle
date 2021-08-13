@@ -138,6 +138,9 @@
   "alg-if":
     "prefix":"IF"
     "body":"\\\\li \\\\If $1:\n\\\\Then\n\t\\\\li $2\n\\\\End$0"
+  "glsxtrnewsymbol":
+    "prefix": "glsxtrnewsymbol"
+    "body" : "\\\\glsxtrnewsymbol[\n\tdescription={%\n\t\t${4:description}\n\t},\n\tunit={\\\\si{${3:(optional) unit}}}\n]{${1:variable name}}{\\\\ensuremath{${2:math notation}}}"
   ##
   ## greek alpha
   'sigma':
@@ -152,6 +155,9 @@
   'epsilon':
     'prefix':'epsilon'
     'body':'\\\\epsilon'
+  'partial':
+    'prefix':'partial'
+    'body':'\\\\partial'
   ##
   '符号约定':
     'prefix':'fuhao'
@@ -207,6 +213,12 @@
   'bash-code':
     'prefix':'bash'
     'body':"\\\\begin{lstlisting}[language=bash]\n\t$1\n\\\\end{lstlisting}$0"
+  'python-code':
+    'prefix':'bash'
+    'body':"\\\\begin{lstlisting}[language=python]\n\t$1\n\\\\end{lstlisting}$0"
+  'text-code':
+    'prefix':'bash'
+    'body':"\\\\begin{lstlisting}\n\t$1\n\\\\end{lstlisting}$0"
   ## tikz
   'draw':
     'prefix':'draw'
@@ -234,7 +246,7 @@
     'body':'\\\\path[${1:line}] ($2) ${4:--} ($3);$0'
   'inport from inkscape':
     'prefix': 'inkspace'
-    'body':'${6:\\\\cref{fig:$1\\}}$7\n\\\\begin{figure}[${5:H}]\n\t\\\\centering\n\t\\\\def\\\\svgwidth{${3:0.6}\\\\\linewidth}\n\t\\\\input{figures/$1.pdf_tex}\n\t\\\\caption{$2}\n\t\\\\label{fig:$1}\n\\\\end{figure}$0'
+    'body':'${6:%\\\\cref{fig:$1\\}}$7\n\\\\begin{figure}[${5:H}]\n\t\\\\centering\n\t\\\\def\\\\svgwidth{${3:0.6}\\\\\linewidth}\n\t\\\\input{figures/$1.pdf_tex}\n\t\\\\caption{$2}\n\t\\\\label{fig:$1}\n\\\\end{figure}$0'
 ######################
 # sql
 ######################
