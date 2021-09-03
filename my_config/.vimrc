@@ -4,7 +4,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-  
 
   " alternatively, pass a path where Vundle should install plugins
   "call vundle#begin('~/some/path/here')
@@ -33,8 +32,8 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'
 
   " https://github.com/yuttie/inkstained-vim
-  Plugin 'yuttie/inkstained-vim' 
-  
+  Plugin 'yuttie/inkstained-vim'
+
   " https://github.com/lervag/vimtex
   Plugin 'lervag/vimtex'
 
@@ -65,6 +64,7 @@ call vundle#begin()
 
   " https://github.com/preservim/nerdtree
   Plugin 'preservim/nerdtree'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -112,8 +112,13 @@ set tabstop=2
 set shiftwidth=4
 
 " tab变成空格
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=2
+" when indenting with '>', use 4 spaces width
+set shiftwidth=2
+" On pressing tab, insert 2 spaces
 set expandtab
-set softtabstop=2
 
 " 设置为相对行号
 " set relativenumber
@@ -181,12 +186,13 @@ set wildmode=longest:list,full
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-" The last two lines con­fig­ure the con­ceal­ment. 
-" This is a fea­ture where LaTeX code is re­placed or made inin­vis­i­ble when your cur­sor is not on that line. 
-" By making \[, \], $ invisible, 
-" they’re less ob­tru­sive which gives you a bet­ter overview of the document. 
+set conceallevel=0
+" let g:tex_conceal='abdmg'
+" The last two lines config­ure the con­ceal­ment.
+" This is a feature where LaTeX code is re­placed or made
+" in invisible when your cur­sor is not on that line.
+" By making \[, \], $ invisible,
+" they’re less ob­tru­sive which gives you a bet­ter overview of the document.
 " This feature also re­places \bigcap by by ∩, \in by ∈ etc. The fol­low­ing an­i­ma­tion should make that clear.
 
 " Commenting blocks of code.
@@ -225,16 +231,61 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-" implement system copy 
+" implement system copy
 " cnblogs.com/huahuayu/p/12235242.html1234
 " zhihu.com/question/19863631
 " if you run vim --version | grep clipboard
 " is -clipboard,you need get get the extra features
-" run 
-" sudo apt install vim-gtk 
+" run
+" sudo apt install vim-gtk
 set clipboard^=unnamed,unnamedplus
 
 " correct some spelling 修改错误拼写
 iabbrev 收敛半径 收敛半径
+iabbrev 皮亚渃 皮亚诺
+iabbrev 甴此 由此
+iabbrev 惼导数 偏导数
+iabbrev （ (
+iabbrev ） )
 
+" save
+nnoremap <C-s> :w<CR>
+nnoremap so v/so<CR>k$
 
+" insert single character
+nnoremap <C-i> i_<Esc>r
+
+" anki format
+function AnkiFormat()
+  %s/\\cite\[\(.*\)\].*/[\1]/ge
+  %s/\$\(.\{-}\)\$/[$]\1[\/$]/ge
+  %s/\\\[/[$$]/ge
+  %s/\\\]/[\/$$]/ge
+  "%s/\(\\hex{.*}\)/[$]\1[\/$]/ge
+  "%s/\(\\bin{.*}\)/[$]\1[\/$]/ge
+  " %s/\(\\SI{.*}\)/[$]\1[\/$]/ge
+  "%s/\(\\num{.*}\)/[$]\1[\/$]/ge
+  %s/\\begin{align\*}/[latex]\\begin{align*}/ge
+  %s/\\end{align\*}/\\end{align*}[\/latex]/ge
+  %s/\\begin{lstlisting}/[latex]\\begin{lstlisting}/ge
+  %s/\\end{lstlisting}/\\end{lstlisting}[\/latex]/ge
+  %s/\\id/\\text/ge
+  %s/\\%/%/ge
+endfunction
+command AF call AnkiFormat()
+
+" indent
+imap <c-]> <Esc>>>i
+imap <s-tab> <Esc><<i
+"imap <c-[> <Esc><<i " Don't define it
+"nmap <c-[> <<
+"nmap <c-]> >>
+
+new line
+nmap <CR> i<CR><Esc>
+nmap <c-CR> o<Esc>
+
+" add workplace vim config
+if filereadable('config.vim')
+  source config.vim
+endif
