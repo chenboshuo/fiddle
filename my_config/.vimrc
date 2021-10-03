@@ -258,34 +258,67 @@ nnoremap <C-i> i_<Esc>r
 " anki format
 function AnkiFormat()
   %s/\\cite\[\(.*\)\].*/[\1]/ge
+  %s/\\begin{solution}\[\(.*\)\].*/[\1]/ge
   %s/\$\(.\{-}\)\$/[$]\1[\/$]/ge
   %s/\\\[/[$$]/ge
   %s/\\\]/[\/$$]/ge
-  "%s/\(\\hex{.*}\)/[$]\1[\/$]/ge
-  "%s/\(\\bin{.*}\)/[$]\1[\/$]/ge
+  %s/\(\\two{.*}\)/[latex]\1[\/latex]/ge
+  %s/\(\\lstinline{.*}\)/[latex]\1[\/latex]/ge
   " %s/\(\\SI{.*}\)/[$]\1[\/$]/ge
   "%s/\(\\num{.*}\)/[$]\1[\/$]/ge
   %s/\\begin{align\*}/[latex]\\begin{align*}/ge
   %s/\\end{align\*}/\\end{align*}[\/latex]/ge
   %s/\\begin{lstlisting}/[latex]\\begin{lstlisting}/ge
   %s/\\end{lstlisting}/\\end{lstlisting}[\/latex]/ge
+  %s/\\begin{table}\[H\]/[latex]\\begin{table}/ge
+  %s/\\end{table}/\\end{table}[\/latex]/ge
   %s/\\id/\\text/ge
   %s/\\%/%/ge
+  call feedkeys("ggvG<<")
 endfunction
 command AF call AnkiFormat()
+
+" anki format
+function Correct()
+  %s/\\mathrm{d}/\\dif/ge
+  %s/\\mathrm{\~d}/\\dif/ge
+  %s/（/(/ge
+  %s/）/)/ge
+  %s/，/,/ge
+  %s/。/./ge
+  %s/aligned/align*/ge
+  %s/【/[/ge
+  %s/】/]/ge
+  %s/Ⅱ/II/ge
+  %s/Ⅲ/III/ge
+  %s/Ⅳ/IV/ge
+  %s/Ⅰ/I/ge
+  %s/；/;/ge
+  %s/：/:/ge
+  %s/Ⅴ/V/ge
+endfunction
+command CR call Correct()
+
 
 " indent
 imap <c-]> <Esc>>>i
 imap <s-tab> <Esc><<i
+nmap <tab> i<tab><Esc>
 "imap <c-[> <Esc><<i " Don't define it
 "nmap <c-[> <<
 "nmap <c-]> >>
 
-new line
+" new line
 nmap <CR> i<CR><Esc>
-nmap <c-CR> o<Esc>
+
+" add latex brace
+nmap i[ i\[<Esc>
+nmap i] i\]<Esc>
 
 " add workplace vim config
 if filereadable('config.vim')
   source config.vim
 endif
+
+" clear all
+command Clear call feedkeys("gg999dd")
