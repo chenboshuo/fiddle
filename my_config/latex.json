@@ -43,6 +43,13 @@
 			"\\\\end{table}$11"
 		]
 	},
+	"option":{
+		"prefix": "option-fix",
+		"body":[  
+			"\\\\begin{tabularx}{\\\\textwidth}{${1:XX}}",
+			"\t$2",
+			"\\\\end{tabularx}"]
+	},
 	"makebox": {
 		"prefix": "makebox",
 		"body": "\\\\makebox[$1\\\\textwidth]{$2} ${3:&} $0"
