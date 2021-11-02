@@ -253,7 +253,7 @@ nnoremap <C-s> :w<CR>
 nnoremap so v/so<CR>k$
 
 " insert single character
-nnoremap <C-i> i_<Esc>r
+nnoremap <C-i> i0<Esc>r
 
 " anki format
 function AnkiFormat()
@@ -286,6 +286,7 @@ function Correct()
   %s/）/)/ge
   %s/，/,/ge
   %s/。/./ge
+  %s/？/?/ge
   %s/aligned/align*/ge
   %s/【/[/ge
   %s/】/]/ge
@@ -296,6 +297,14 @@ function Correct()
   %s/；/;/ge
   %s/：/:/ge
   %s/Ⅴ/V/ge
+  %s/①/(1)/ge
+  %s/②/(2)/ge
+  %s/③/(3)/ge
+  %s/④/(4)/ge
+  %s/⑤/(5)/ge
+  %s/\\boldsumbol{\(.\{-}\)}/\1/ge
+  %s/\\mathrm{\(.\{-}\)}/\1/ge
+  %s/\\mathbf{\(.\{-}\)}/\1/ge
 endfunction
 command CR call Correct()
 
@@ -322,3 +331,11 @@ endif
 
 " clear all
 command Clear call feedkeys("gg999dd")
+
+" latex si
+function Si()
+  %s/\(\d\+\)B/$\\SI{\1}{B}$/ge
+  %s/\(\d\+\)\(.\)B/$\\SI{\1}{\2B}$/ge
+endfunction
+command SI call Si()
+
