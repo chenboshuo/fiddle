@@ -65,6 +65,9 @@ call vundle#begin()
   " https://github.com/preservim/nerdtree
   Plugin 'preservim/nerdtree'
 
+  " highlights the selected words
+  Plugin 'RRethy/vim-illuminate'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -302,7 +305,7 @@ function Correct()
   %s/③/(3)/ge
   %s/④/(4)/ge
   %s/⑤/(5)/ge
-  %s/\\boldsumbol{\(.\{-}\)}/\1/ge
+  %s/\\boldsymbol{\(.\{-}\)}/\1/ge
   %s/\\mathrm{\(.\{-}\)}/\1/ge
   %s/\\mathbf{\(.\{-}\)}/\1/ge
 endfunction
@@ -338,4 +341,3 @@ function Si()
   %s/\(\d\+\)\(.\)B/$\\SI{\1}{\2B}$/ge
 endfunction
 command SI call Si()
-
