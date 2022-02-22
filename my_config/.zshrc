@@ -338,7 +338,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # proxy
 alias trojan='cd /usr/local/src/trojan-cli/ && ./trojan'
-alias http_proxy='export http_proxy=socks5://127.0.0.1:1089 && export https_proxy=$http_proxy'
+alias http_proxy='export http_proxy=socks5://127.0.0.1:1090 && export https_proxy=$http_proxy'
 
 # matlab
 alias matlab='/media/data/Programs/matlab_linux/bin/matlab -nodesktop -nosplash $*'
@@ -348,7 +348,7 @@ alias matlab_full='/media/data/Programs/matlab_linux/bin/matlab'
 precmd() { print "" }
 
 # open tmp
-cd /tmp
+cd /tmp/temp_downloads
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -368,3 +368,18 @@ export BAT_THEME="GitHub"
 
 # https://github.com/dalance/procs
 # alias ps="procs"
+alias unzip="unzip -O cp936"
+
+peek_doc(){
+  out_file='/tmp/temp_downloads/'$(basename $1).pdf
+  pandoc $1 --to=pdf --output=$out_file\
+    -V CJKmainfont='黑体' -V mainfont='Times New Roman' \
+    -t latex --pdf-engine=xelatex
+  xdg-open $out_file
+  echo $out_file
+}
+
+# set vim config path
+VIMINIT="~/.vim/vimrc"
+
+alias vimconfig='vim ~/.vim/vimrc'
