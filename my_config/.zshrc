@@ -122,9 +122,9 @@ if [ ! -f "$ANTIGEN" ]; then
 	URL="http://git.io/antigen"
 	TMPFILE="/tmp/antigen.zsh"
 	if [ -x "$(which curl)" ]; then
-		curl -L "$URL" -o "$TMPFILE" 
+		curl -L "$URL" -o "$TMPFILE"
 	elif [ -x "$(which wget)" ]; then
-		wget "$URL" -O "$TMPFILE" 
+		wget "$URL" -O "$TMPFILE"
 	else
 		echo "ERROR: please install curl or wget before installation !!"
 		exit
@@ -165,7 +165,7 @@ alias d='dirs -v | head -10'
 # Disable correction
 unsetopt correct_all
 unsetopt correct
-DISABLE_CORRECTION="true" 
+DISABLE_CORRECTION="true"
 
 # Enable 256 color to make auto-suggestions look nice
 export TERM="xterm-256color"
@@ -201,7 +201,8 @@ antigen use prezto
 # default bundles
 antigen bundle rupa/z z.sh
 antigen bundle Vifon/deer
-antigen bundle zdharma/fast-syntax-highlighting
+# antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle zdharma-continuum/fast-syntax-highlighting
 # antigen bundle zsh-users/zsh-autosuggestions
 
 antigen bundle willghatch/zsh-cdr
@@ -244,7 +245,7 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[assign]=none
 
 # load local config
-[ -f "$HOME/.local/etc/config.zsh" ] && source "$HOME/.local/etc/config.zsh" 
+[ -f "$HOME/.local/etc/config.zsh" ] && source "$HOME/.local/etc/config.zsh"
 [ -f "$HOME/.local/etc/local.zsh" ] && source "$HOME/.local/etc/local.zsh"
 
 antigen apply
@@ -300,20 +301,20 @@ bindkey -s '\eOS' 'vim '
 # Disable correction
 unsetopt correct_all
 unsetopt correct
-DISABLE_CORRECTION="true" 
+DISABLE_CORRECTION="true"
 
 # completion detail
 zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dll'
 zstyle ':completion:*:*sh:*:' tag-order files
 
 
-# wakatime 
+# wakatime
 source ~/bash-wakatime.sh
 
 # anaconda3
 export PATH=~/anaconda3/bin:$PATH
 
-# sudo path 
+# sudo path
 alias sudo='sudo env PATH=$PATH'
 
 # virtualenv-wrapper path
@@ -342,7 +343,7 @@ alias http_proxy='export http_proxy=socks5://127.0.0.1:1090 && export https_prox
 
 # matlab
 alias matlab='/media/data/Programs/matlab_linux/bin/matlab -nodesktop -nosplash $*'
-alias matlab_full='/media/data/Programs/matlab_linux/bin/matlab' 
+alias matlab_full='/media/data/Programs/matlab_linux/bin/matlab'
 
 # This will simply print an empty line before the PROMPT is rendered.
 precmd() { print "" }
