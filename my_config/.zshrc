@@ -339,7 +339,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # proxy
 alias trojan='cd /usr/local/src/trojan-cli/ && ./trojan'
-alias http_proxy='export http_proxy=socks5://127.0.0.1:1090 && export https_proxy=$http_proxy'
+alias http_proxy='export http_proxy=socks5://127.0.0.1:1091 && export https_proxy=$http_proxy'
 
 # matlab
 alias matlab='/media/data/Programs/matlab_linux/bin/matlab -nodesktop -nosplash $*'
@@ -384,3 +384,53 @@ peek_doc(){
 VIMINIT="~/.vim/vimrc"
 
 alias vimconfig='vim ~/.vim/vimrc'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/cbs/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/cbs/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/cbs/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/cbs/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+function work (){j $1 && code ./}
+
+function pdf_number_of_pages(){
+  pdftk $1 dump_data | grep NumberOfPages | awk '{print $2}'
+}
+
+function shrink_pdf(){
+  temp_dir=/tmp/temp_downloads/$1"_pages"
+  mkdir -p $temp_dir
+  mkdir -p $temp_dir/build
+
+  echo "\documentclass{article}\n" \
+    "\pagenumbering{gobble}\n"\
+    "\\\\usepackage{pdfpages}\n"\
+    "\\\\begin{document}\n" > $temp_dir/main.tex
+
+  number_of_pages=`pdf_number_of_pages $1`
+  echo "find $number_of_pages in $1"
+  for i in {1..$number_of_pages}
+  do
+    echo "handling page $i/$number_of_pages"
+    inkscape $1 --pdf-poppler --pdf-page=$i \
+      --export-filename=$temp_dir/$i.png
+    echo "  \includepdf{$i.png}\n" >> $temp_dir/main.tex
+  done
+  echo "\\\\end{document}\n" >> $temp_dir/main.tex
+
+  cur_dir=`pwd`
+  cd $temp_dir
+  xelatex -output-directory="$temp_dir/build" $temp_dir/main.tex
+  cd $cur_dir
+  
+  cp $temp_dir/build/main.pdf "$1_shrinked.pdf"
+}
