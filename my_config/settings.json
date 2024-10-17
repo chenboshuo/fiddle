@@ -25,6 +25,7 @@
 				"-synctex=1",
 				"-interaction=nonstopmode",
 				"-file-line-error",
+				"-output-directory=%OUTDIR%",
 				"%DOCFILE%"
 			]
 		},
@@ -32,16 +33,14 @@
 			"name": "bibtex",
 			"command": "bibtex",
 			"args": [
-				"./build/%DOCFILE%",
-				// "%DOCFILE%"
+				"./build/%DOCFILE%"
 			]
 		},
 		{
 			"name": "biber",
 			"command": "biber",
 			"args": [
-				"%OUTDIR%/%DOCFILE%",
-				// "%DOCFILE%",
+				"%OUTDIR%/%DOCFILE%"
 			]
 		},
 		{
@@ -53,6 +52,13 @@
 				"%DOCFILE%"
 			]
 		},
+		{
+			"name": "pythontex",
+			"command": "pythontex",
+			"args": [
+				"%OUTDIR%/%DOCFILE%.pytxcode"
+			]
+		}
 	],
 	"latex-workshop.latex.recipes": [
 		{
@@ -72,6 +78,15 @@
 			"tools": [
 				"xelatex",
 				"bibtex",
+				"xelatex",
+				"xelatex"
+			]
+		},
+				{
+			"name": "xe->py->xe->xe",
+			"tools": [
+				"xelatex",
+				"pythontex",
 				"xelatex",
 				"xelatex"
 			]
@@ -117,20 +132,19 @@
 		"javascript": "node",
 		"matlab": "cd $dir && matlab < $fileName",
 		// "php": "C:\\php\\php.exe",
-		"python": "cd $dir && time python $fileName",
+		"python": "cd $dir && timeout 5m time python $fileName",
 		"perl": "perl",
 		// "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
 		"go": "go run",
 		// "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
 		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-		"c": "cd $dir && gcc $fileName -o ./$fileNameWithoutExt.out -lm && time $dir$fileNameWithoutExt.out",
+		"c": "cd $dir && gcc $fileName -o ./$fileNameWithoutExt.out -lm && timeout 5m time $dir$fileNameWithoutExt.out",
 		// "c": "cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt.out -lm && time /tmp/$fileNameWithoutExt.out",
 		// "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.out && time ./$fileNameWithoutExt.out"
-		"cpp": "cd $dir && g++ $fileName -o ./$fileNameWithoutExt.out && time ./$fileNameWithoutExt.out",
-		"latex": "cd $dir && sh make.sh"
+		"cpp": "cd $dir && g++ $fileName -o ./$fileNameWithoutExt.out && timeout 5m time ./$fileNameWithoutExt.out",
+		"latex": "cd $dir && make"
 	},
 	"code-runner.saveFileBeforeRun": true,
-	"window.zoomLevel": 0,
 	"latex-workshop.message.error.show": false,
 	"latex-workshop.message.warning.show": false,
 	"code-runner.runInTerminal": true,
@@ -142,14 +156,17 @@
 	"C_Cpp.clang_format_fallbackStyle": "Google",
 	"latex-workshop.view.pdf.viewer": "tab",
 	"cSpell.userWords": [
-		"Helvetica",
 		"aliyun",
 		"astype",
+		"boldsymbol",
 		"ctex",
 		"deque",
+		"Eigen",
 		"endp",
 		"fontset",
+		"heapify",
 		"heapq",
+		"Helvetica",
 		"iterrows",
 		"itertools",
 		"ivar",
@@ -161,6 +178,7 @@
 		"quantile",
 		"rtype",
 		"scipy",
+		"subarray",
 		"sympy",
 		"tikzplotlib",
 		"timeit"
@@ -175,7 +193,9 @@
 	"python.showStartPage": false, // Override default value of false
 	"[python]": {
 		"editor.insertSpaces": true,
-		"editor.tabSize": 4
+		"editor.tabSize": 4,
+		"editor.defaultFormatter": "ms-python.python",
+		"editor.formatOnType": true
 	},
 	"[masm]": {
 		"editor.insertSpaces": true,
@@ -193,9 +213,6 @@
 		"**/.factorypath": true
 	},
 	"zenMode.fullScreen": false,
-	"window.menuBarVisibility": "toggle",
-	"workbench.sideBar.location": "left",
-	"workbench.statusBar.visible": true,
 	"editor.minimap.enabled": true,
 	"[cpp]": {
 		"editor.defaultFormatter": "xaver.clang-format"
@@ -205,16 +222,9 @@
 	"[java]": {
 		"editor.defaultFormatter": "xaver.clang-format"
 	},
-	"workbench.editorAssociations": [
-		{
-			"viewType": "ms-python.python.notebook.ipynb",
-			"filenamePattern": "*.ipynb"
-		},
-		{
-			"viewType": "jupyter.notebook.ipynb",
-			"filenamePattern": "*.ipynb"
-		}
-	],
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook"
+	},
 	"code-runner.languageIdToFileExtensionMap": {
 		"bat": ".bat",
 		"powershell": ".ps1",
@@ -224,15 +234,49 @@
 	"java.format.settings.profile": "Google",
 	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
 	"terminal.integrated.inheritEnv": false,
-    "pyright.disableOrganizeImports": true,
-		"jupyter.alwaysTrustNotebooks": true,
-		"cSpell.enableFiletypes": [
-			"masm"
-		],
-		"editor.formatOnSaveMode": "modifications",
-		"latex-workshop.message.information.show": true,
-		"python.languageServer": "Microsoft",
-		"python.analysis.extraPaths": [
-			"."
-		],
+	"pyright.disableOrganizeImports": true,
+	"jupyter.alwaysTrustNotebooks": true,
+	"cSpell.enableFiletypes": [
+		"masm"
+	],
+	"editor.formatOnSaveMode": "modifications",
+	"latex-workshop.message.information.show": true,
+	"python.languageServer": "Default",
+	"python.analysis.extraPaths": [
+		"."
+	],
+	"notebook.cellToolbarLocation": {
+		"default": "right",
+		"jupyter-notebook": "left"
+	},
+	"security.workspace.trust.untrustedFiles": "open",
+	"editor.renderControlCharacters": true,
+	"terminal.integrated.tabs.location": "left",
+	"[c]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"bracketPairColorizer.depreciation-notice": false,
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"terminal.integrated.enableMultiLinePasteWarning": false,
+	"indentRainbow.errorColor": "rgba(128,32,32,0.04)",
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"revealjs.backgroundTransition": "slide",
+	"revealjs.exportHTMLPath": "./build",
+	"workbench.editor.scrollToSwitchTabs": true,
+	"markdown-preview-enhanced.revealjsTheme": "serif.css",
+	"extensions.experimental.affinity": {
+		"asvetliakov.vscode-neovim": 1
+	},
+	"editor.stickyScroll.enabled": true,
+	"editor.accessibilitySupport": "off",
+	"editor.wrappingIndent": "deepIndent",
+	"python.pythonPath": "/home/cbs/anaconda3/bin/python",
+	"python.linting.pep8Enabled": true,
 }

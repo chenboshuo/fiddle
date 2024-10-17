@@ -313,6 +313,8 @@ source ~/bash-wakatime.sh
 
 # anaconda3
 export PATH=~/anaconda3/bin:$PATH
+# cmake
+export PATH=/opt/cmake-3.28.0-rc3-linux-x86_64/bin:$PATH
 
 # sudo path
 alias sudo='sudo env PATH=$PATH'
@@ -329,17 +331,20 @@ autoload -U compinit && compinit -u
 
 # my scripts path
 export PATH=/home/cbs/Documents/tools:$PATH
+export PATH=/home/cbs/software:$PATH
 
 alias ipy='ipython'
 alias 'git_log'='git log --oneline --color | pyemojify | less -r'
+alias clang="clang-15"
+alias clang++="clang++-15"
+alias clangd="clangd-15"
 
 # go language
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # proxy
-alias trojan='cd /usr/local/src/trojan-cli/ && ./trojan'
-alias http_proxy='export http_proxy=socks5://127.0.0.1:1091 && export https_proxy=$http_proxy'
+alias http_proxy='export http_proxy=socks5://127.0.0.1:20171 && export https_proxy=$http_proxy && export all_proxy=socks5://127.0.0.1:20170'
 
 # matlab
 alias matlab='/media/data/Programs/matlab_linux/bin/matlab -nodesktop -nosplash $*'
@@ -383,7 +388,10 @@ peek_doc(){
 # set vim config path
 VIMINIT="~/.vim/vimrc"
 
-alias vimconfig='vim ~/.vim/vimrc'
+alias vimconfig='nvim ~/.vim/vimrc'
+
+# rust environment
+. "$HOME/.cargo/env"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -404,6 +412,30 @@ function work (){j $1 && code ./}
 
 function pdf_number_of_pages(){
   pdftk $1 dump_data | grep NumberOfPages | awk '{print $2}'
+}
+
+function combine_pngs(){
+  temp_dir=`realpath $1`
+  # file_counts=`ls -1|wc -l`
+  file_counts=$((`ls -l | wc -l`-1))
+  echo "find $file_counts pngs"
+
+  mkdir -p $temp_dir/build
+  echo "\documentclass{article}\n" \
+    "\pagenumbering{gobble}\n"\
+    "\\\\usepackage{pdfpages}\n"\
+    "\\\\begin{document}\n" > $temp_dir/main.tex
+
+  for i in {1..$file_counts}
+  do
+    echo "  \includepdf{$i.png}\n" >> $temp_dir/main.tex
+  done
+  echo "\\\\end{document}\n" >> $temp_dir/main.tex
+
+  cur_dir=`pwd`
+  cd $temp_dir
+  xelatex -output-directory="$temp_dir/build" $temp_dir/main.tex
+  cd $cur_dir
 }
 
 function shrink_pdf(){
@@ -431,6 +463,7 @@ function shrink_pdf(){
   cd $temp_dir
   xelatex -output-directory="$temp_dir/build" $temp_dir/main.tex
   cd $cur_dir
-  
+
   cp $temp_dir/build/main.pdf "$1_shrinked.pdf"
 }
+

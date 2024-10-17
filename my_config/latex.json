@@ -46,7 +46,7 @@
 	"option":{
 		"prefix": "option-fix",
 		"body":[  
-			"\\\\begin{tabularx}{\\\\textwidth}{${1:XX}}",
+			"\\\\begin{tabularx}{0.9\\\\textwidth}{${1:XX}}",
 			"\t$2",
 			"\\\\end{tabularx}"]
 	},
@@ -71,9 +71,13 @@
 			"\\\\end{assumption}$0"
 		]
 	},
-	"符号约定": {
-		"prefix": "fuhao",
-		"body": "\\$ $1 \\$ & $2 \\\\\\\\ $0"
+	"Chinese and the translation":{
+		"prefix":"\\zhEn",
+		"body": ["\\\\zhEn{${1:中文}",
+			"}{%",
+			"\t$2",
+			"}%"
+		]
 	},
 	"newsymbol":{
 		"prefix": "glsnewsymbol",
@@ -273,5 +277,10 @@
 	"otherkeywords={}":{
 		"prefix": "otherkeywords={}",
 		"body": "otherkeywords={$1}$0"
+	},
+	// shortcut
+	"||":{
+		"prefix": "\\parallel",
+		"body": "\\parallel"
 	},
 }

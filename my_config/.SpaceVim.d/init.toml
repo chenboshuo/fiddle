@@ -1,0 +1,132 @@
+#=============================================================================
+# basic.toml --- basic configuration example for SpaceVim
+# Copyright (c) 2016-2022 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg@outlook.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+  # set spacevim theme. by default colorscheme layer is not loaded,
+  # if you want to use more colorscheme, please load the colorscheme
+  # layer
+  colorscheme = "github"
+  colorscheme_bg = "light"
+  # Disable guicolors in basic mode, many terminal do not support 24bit
+  # true colors
+  enable_guicolors = false
+  # Disable statusline separator, if you want to use other value, please
+  # install nerd fonts
+  statusline_separator = "nil"
+  statusline_iseparator = "bar"
+  buffer_index_type = 4
+  windows_index_type = 3
+  enable_tabline_filetype_icon = false
+  enable_statusline_mode = false
+  statusline_unicode = false
+  enable_filetree_gitstatus=true
+  # Enable vim compatible mode, avoid changing origin vim key bindings
+  vimcompatible = true
+	autocomplete_parens = true
+	# The difference is that the bootstrap before function will be called before SpaceVim core, 
+	# and the bootstrap after function is called on autocmd VimEnter. 
+	bootstrap_before = 'myspacevim#before'
+  bootstrap_after = 'myspacevim#after'
+
+[[layers]]
+  name = "colorscheme"
+
+[options]
+  colorscheme = "github"
+  colorscheme_bg = "light"
+
+[[layers]]
+  name = 'shell'
+  default_position = 'top'
+  default_height = 30
+
+# https://spacevim.org/use-vim-as-ide/
+[[layers]]
+    name = "denite"
+[[layers]]
+    name = 'git'
+[[layers]]
+    name = 'VersionControl'
+[[layers]]
+  name = "lang#c"
+  enable_clang_syntax_highlight = true
+  clang_executable = "clang"
+  clang_flag = ['-I/usr/include']
+  format_on_save = true
+[layer.clang_std]
+	c = "c11"
+	cpp = "c++1z"
+	objc = "c11"
+	objcpp = "c++1z"
+[[layers]]
+  name = "checkers"
+  show_cursor_error = true
+  lint_on_the_fly = true
+[[layers]]
+  name = "lang#python"
+  format_on_save = true
+[[layers]]
+  name = "incsearch"
+[[custom_plugins]]
+  repo = "wakatime/vim-wakatime"
+  merged = false
+[[custom_plugins]]
+  repo = "untitled-ai/jupyter_ascending.vim"
+  merged = false
+[[custom_plugins]]
+  repo = "dominikduda/vim_current_word"
+  merged = false
+
+# shows the context of the currently visible buffer contents. 
+[[custom_plugins]]
+  repo = "wellle/context.vim"
+  merged = false
+# https://github.com/SpaceVim/SpaceVim/issues/2564
+[options]
+  autocomplete_method = "coc"
+  # options for layers checkers
+  # https://zhuanlan.zhihu.com/p/137840336
+  enable_neomake = true
+  enable_ale = false
+  lint_on_the_fly = false
+
+# Enable autocomplete layer
+[[layers]]
+  name = 'autocomplete'
+  auto-completion-return-key-behavior = "complete"
+  auto-completion-tab-key-behavior = "smart"
+	auto_completion_delay = 200
+  auto_completion_complete_with_key_sequence = "nil"
+  auto_completion_complete_with_key_sequence_delay = 0.1
+	auto_completion_enable_snippets_in_popup = true
+# The lsp layer has to be enabled too.
+# SpaceVim converts the configuration
+# in the lsp layer and then passes it to coc.
+# You can put your language servers here.
+[[layers]]
+	name = 'lsp'
+	enabled_clients = ['vimls', 'clangd']
+	# filetypes = [
+    # "c",
+    # "cpp"
+	# ]
+	[layers.override_cmd]
+		c = ["clangd", "--limit-results=5"]
+		cpp = ["clangd", "--limit-results=5"]
+
+[[layers]]
+	name = "format"
+[[layers]]
+  name = "tools"
+[[layers]]
+  name = "incsearch"
+[[layers]]
+  name = "gtags"
+  gtagslabel = "pygments"
+

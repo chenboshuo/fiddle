@@ -78,7 +78,7 @@ def export_figure(s, tikz=False):
     if tikz:
         import tikzplotlib
         tikzplotlib.save(f"../thesis/figures/{s}.tex", strict=True)
-    plt.savefig(f"../thesis/figures/{s}.pdf")
+    plt.savefig(f"../thesis/figures/{s}.pdf",bbox_inches='tight')
 
 # 导入数据
 

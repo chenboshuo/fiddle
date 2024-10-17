@@ -1,3 +1,25 @@
 snippet today "Date"
 `date +%F`
 endsnippet
+
+
+snippet beg "begin{} / end{}" bA
+\begin{$1}
+	$2
+\end{$1}$0
+endsnippet
+
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+
+snippet newacronym "\newacronym" wa
+\newacronym{$1}{$1}{$2}
+endsnippet
