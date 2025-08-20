@@ -112,6 +112,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Antigen: https://github.com/zsh-users/antigen
 ANTIGEN="$HOME/.local/bin/antigen.zsh"
+# https://www.reddit.com/r/ollama/comments/1c4zg15/does_anyone_know_how_to_change_where_your_models/
+export OLLAMA_MODELS=/media/cbs/data/ollama_models
 
 # Install antigen.zsh if not exist
 if [ ! -f "$ANTIGEN" ]; then
@@ -332,6 +334,8 @@ autoload -U compinit && compinit -u
 # my scripts path
 export PATH=/home/cbs/Documents/tools:$PATH
 export PATH=/home/cbs/software:$PATH
+# texlive 2025
+export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
 
 alias ipy='ipython'
 alias 'git_log'='git log --oneline --color | pyemojify | less -r'
@@ -363,7 +367,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # use trash(http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html)
-alias rm="trash-rm"
+alias rm="trash-put"
 
 # https://github.com/sharkdp/bat
 # alias cat="bat"
@@ -466,4 +470,10 @@ function shrink_pdf(){
 
   cp $temp_dir/build/main.pdf "$1_shrinked.pdf"
 }
+
+# nvim settings
+export NVM_DIR="$HOME/.nvm"                                                                                     ─╯
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
